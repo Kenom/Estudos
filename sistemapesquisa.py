@@ -1,7 +1,7 @@
 import sys
 import os
 
-register_name = ['Wesley','Maia','Silva','Glaydson','Julia','Jeff','arthur','Carol','Renata','Patricia','Gabriel']
+register_name = ['Wesley','Maia','Silva','Glaydson','Julia','Jeff','arthur','Carol','Patricia','Gabriel']
 name_search = ''
 user_pass = '123456'
 
