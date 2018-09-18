@@ -1,3 +1,6 @@
+#Código criado por Wesley Maia#
+#Voltado totalmente a estudo de Python#
+
 import sys
 import os
 import pickle
@@ -9,7 +12,7 @@ with open("data.txt", "rb") as file:    #Abre o arquivo data.txt , que possui a 
     register_name = pickle.load(file)
 
 
-# register_name = ['Wesley','Maia','Silva','Glaydson','Julia','Jeff','arthur','Carol','Renata','Patricia','Gabriel']
+# register_name = ['Wesley','Maia','Silva','Glaydson','Julia','Jeff','arthur','Carol','Renata','Patricia','Gabriel'] #lista inicial criada com valores já previamente salvos.
 name_search = ''
 user_pass = '123456'
 
@@ -30,7 +33,7 @@ def data_horario(data):
 def remove_register(remove,register_name):
     if remove in register_name:
         register_name.remove(remove)
-    elif remove not in register_name:
+    elif remove not in register_name:   #Caso o valor não esteja em register ele fecha um loop até um valor válido ser aceito.
         while remove not in register_name:
             remove = input("Esse nome não se encontra na Lista, Digite um válido: ")
         return remove
@@ -39,7 +42,7 @@ def remove_register(remove,register_name):
 def pesquisa_search(name_search,register_name):
     if name_search in register_name:
         print('Nome encontrado!')
-    elif name_search not in register_name:
+    elif name_search not in register_name:  #Caso o valor não esteja em register ele fecha um loop até um valor válido ser aceito.
         while name_search not in register_name:
             name_search = input("Por favor digite um numero válido: ")
     return register_name
@@ -69,5 +72,3 @@ print(register_name)
 with open("data.txt", "wb") as file:  # "Salva a variavel List em um arquivo data.txt como um database
     pickle.dump(register_name, file)
 data_horario(date)
-
-
