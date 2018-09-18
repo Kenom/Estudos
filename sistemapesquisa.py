@@ -1,7 +1,13 @@
 import sys
 import os
+import pickle
 
-register_name = ['Wesley','Maia','Silva','Glaydson','Julia','Jeff','arthur','Carol','Patricia','Gabriel']
+
+with open("data.txt", "rb") as file:
+    register_name = pickle.load(file)
+
+
+# register_name = ['Wesley','Maia','Silva','Glaydson','Julia','Jeff','arthur','Carol','Renata','Patricia','Gabriel']
 name_search = ''
 user_pass = '123456'
 
@@ -40,4 +46,5 @@ os.system('pause')
 name_search = input('Qual o nome deseja Pesquisar? ')
 pesquisa_search(name_search,register_name)
 
-
+with open("data.txt", "wb") as file:
+    pickle.dump(register_name, file)
