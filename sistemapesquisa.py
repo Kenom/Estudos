@@ -31,6 +31,7 @@ def data_horario(data):
     return data
 
 def remove_register(remove,register_name):
+    "Func response for deleting registers in var list register_name"
     if remove in register_name:
         register_name.remove(remove)
     elif remove not in register_name:   #Caso o valor não esteja em register ele fecha um loop até um valor válido ser aceito.
@@ -40,6 +41,7 @@ def remove_register(remove,register_name):
 
 
 def pesquisa_search(name_search,register_name):
+    "Func response for search names in var list register_name"
     if name_search in register_name:
         print('Nome encontrado!')
     elif name_search not in register_name:  #Caso o valor não esteja em register ele fecha um loop até um valor válido ser aceito.
@@ -48,6 +50,7 @@ def pesquisa_search(name_search,register_name):
     return register_name
 
 def cadastro_register(cadastramento,register_name):
+    "Func response for register new values in var list register_name"
     if cadastramento in register_name:
         print('Esse nome já contra no banco de Dados!')
     else:
@@ -56,26 +59,36 @@ def cadastro_register(cadastramento,register_name):
         print('Registro feito com sucesso!')
         return register_name
 
-
-opc1 = int(input(" 1- Cadastrar Usuário \n 2- Remover Usuário \n 3- Pesquisar Usuario \n"))
-
-if opc1 == 1:
-    cadastramento = input('Qual nome deseja Cadastrar? ')
-    cadastro_register(cadastramento, register_name)
-    os.system('pause')
-elif opc1 == 2:
-    remove = input("Escreva o nome que  gostaria de remover da Lista: ")
-    remove_register(remove, register_name)
-    print("Usuário removido com sucesso: ")
-    print(register_name)
-elif opc1 == 3:
-    name_search = input('Qual o nome deseja Pesquisar? ')
-    pesquisa_search(name_search, register_name)
-else:
-    while opc1 != (1,2,3):
+def while_escolha(opc1):
+    while opc1 != (1, 2, 3):
+        "Func loop for menu , forcing them to choose a value"
         print("Digite uma Opção Válida: ")
         opc1 = int(input(" 1- Cadastrar Usuário \n 2- Remover Usuário \n 3- Pesquisar Usuario \n"))
+    return opc1
 
-with open("data.txt", "wb") as file:  # "Salva a variavel List em um arquivo data.txt como um database
+
+def escolha_func(opc1):
+    "Func MENU , need value 1,2 or 3 for software to continue"
+    if opc1 == 1:
+        cadastramento = input('Qual nome deseja Cadastrar? ')
+        cadastro_register(cadastramento, register_name)
+        os.system('pause')
+    elif opc1 == 2:
+        remove = input("Escreva o nome que  gostaria de remover da Lista: ")
+        remove_register(remove, register_name)
+        print("Usuário removido com sucesso: ")
+        print(register_name)
+    elif opc1 == 3:
+        name_search = input('Qual o nome deseja Pesquisar? ')
+        pesquisa_search(name_search, register_name)
+    else:
+        while_escolha(opc1)
+    return opc1
+
+opc1 = int(input(" 1- Cadastrar Usuário \n 2- Remover Usuário \n 3- Pesquisar Usuario \n"))  #Menu de opções onde o usuário precisa inserir os valores 1,2 ou 3
+escolha_func(opc1)
+
+
+with open("data.txt", "wb") as file:  #Save infos in data.txt
     pickle.dump(register_name, file)
 data_horario(date)
