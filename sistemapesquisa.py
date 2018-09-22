@@ -55,19 +55,24 @@ def cadastro_register(cadastramento,register_name):
         print(register_name)
         print('Registro feito com sucesso!')
         return register_name
-cadastramento = input('Qual nome deseja Cadastrar? ')
 
-cadastro_register(cadastramento, register_name)
-os.system('pause')
 
-name_search = input('Qual o nome deseja Pesquisar? ')
-pesquisa_search(name_search,register_name)
+opc1 = int(input(" 1- Cadastrar Usuário \n 2- Remover Usuário \n 3- Pesquisar Usuario \n"))
 
-remove = input ("Escreva o nome que  gostaria de remover da Lista: ")
-remove_register(remove,register_name)
-
-print("Usuário removido com sucesso: ")
-print(register_name)
+if opc1 == 1:
+    cadastramento = input('Qual nome deseja Cadastrar? ')
+    cadastro_register(cadastramento, register_name)
+    os.system('pause')
+elif opc1 == 2:
+    remove = input("Escreva o nome que  gostaria de remover da Lista: ")
+    remove_register(remove, register_name)
+    print("Usuário removido com sucesso: ")
+    print(register_name)
+elif opc1 == 3:
+    name_search = input('Qual o nome deseja Pesquisar? ')
+    pesquisa_search(name_search, register_name)
+else:
+    print ("Valor incorreto!")       #Criando um While para retomar as opções.
 
 with open("data.txt", "wb") as file:  # "Salva a variavel List em um arquivo data.txt como um database
     pickle.dump(register_name, file)
