@@ -72,7 +72,9 @@ elif opc1 == 3:
     name_search = input('Qual o nome deseja Pesquisar? ')
     pesquisa_search(name_search, register_name)
 else:
-    print ("Valor incorreto!")       #Criando um While para retomar as opções.
+    while opc1 != (1,2,3):
+        print("Digite uma Opção Válida: ")
+        opc1 = int(input(" 1- Cadastrar Usuário \n 2- Remover Usuário \n 3- Pesquisar Usuario \n"))
 
 with open("data.txt", "wb") as file:  # "Salva a variavel List em um arquivo data.txt como um database
     pickle.dump(register_name, file)
