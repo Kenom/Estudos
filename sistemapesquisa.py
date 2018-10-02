@@ -26,6 +26,7 @@ else:
     sys.exit()
 
 def data_horario(data):
+    "Func data_horario for when called, displays date"
     hj = date.today()
     print(hj)
     return data
