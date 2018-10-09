@@ -1,0 +1,110 @@
+
+h1 {
+  color: Sienna;
+  background-color: AntiqueWhite;
+  width:400px;
+  height:35px;
+  border-radius: 5px;
+  text-align-last: center;
+}
+
+.Contact {
+  background-color: AntiqueWhite;
+  width:400px;
+  height:65px;
+  border-radius: 5px;
+  text-align-last: center;
+}
+
+h3 {
+  color: Sienna;
+}
+
+li {
+  font-style: italic;
+}
+
+.Cargo1 {
+  background-color: Linen;
+  border-radius: 5px;
+  text-align-last: left;
+  width: 780px;
+}
+
+.Cargo1_desc {
+  background-color: FloralWhite;
+  border-radius: 5px;
+  text-align-last: left;
+  width: 780px;
+}
+
+.Cargo2 {
+  background-color: Linen;
+  border-radius: 5px;
+  text-align-last: left;
+  width: 780px;
+}
+
+.Cargo2_desc {
+  background-color: FloralWhite;
+  border-radius: 5px;
+  text-align-last: left;
+  width: 780px;
+}
+
+.Cargo3 {
+  background-color: Linen;
+  border-radius: 5px;
+  text-align-last: left;
+  width: 780px;
+}
+
+.Cargo3_desc {
+  background-color: FloralWhite;
+  border-radius: 5px;
+  text-align-last: left;
+  width: 780px;
+}
+
+
+.Cargo4 {
+  background-color: Linen;
+  border-radius: 5px;
+  text-align-last: left;
+  width: 780px;
+}
+
+.Cargo4_desc {
+  background-color: FloralWhite;
+  border-radius: 5px;
+  text-align-last: left;
+  width: 780px;
+}
+
+.conhecimento {
+  background-color: linen;
+  border-radius: 5px;
+  text-align-last: left;
+  width: 780px;
+}
+
+.conhecimento_desc {
+  background-color: FloralWhite;
+  border-radius: 5px;
+  text-align-last: left;
+  width: 780px;
+}
+
+.Language {
+  background-color: Linen;
+  border-radius: 5px;
+  text-align-last: left;
+  width: 780px;
+}
+
+.Language_desc {
+  background-color: FloralWhite;
+  border-radius: 5px;
+  text-align-last: left;
+  width: 780px;
+}
