@@ -1,0 +1,16 @@
+#program for my son by facilitating an installation of Mods in his favorite game.#
+#Wesley Maia 09-12-2018#
+
+import os
+import shutil
+
+def movejar():
+
+    sourcepath='C:/Users/Kenom/Downloads'
+    sourcefiles = os.listdir(sourcepath)
+    destinationpath = 'C:/Users/Kenom/AppData/Roaming/.minecraft/mods'
+    for file in sourcefiles:  #Verify archives extensions .jar and move to "destinationpath"
+       if file.endswith('.jar'):
+          shutil.move(os.path.join(sourcepath,file), os.path.join(destinationpath,file))
+
+movejar()
